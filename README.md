@@ -62,7 +62,8 @@ rails db:migrate
 rails generate controller Api::V1::Posts index show create update destroy
 //Gemfileいじったら
 bundle install
-```bash
+```
+
 
 #### ファイルの編集ができないとき
 ```bash
@@ -73,4 +74,4 @@ sudo chown $(whoami) /home/shin/dev/ガバイソン/rails_study/config/database.
 
 //ディレクトリのパーミッションを変更する
 sudo chown -R $(whoami) /home/shin/dev/ガバイソン/rails_study/
-```bash
+```
