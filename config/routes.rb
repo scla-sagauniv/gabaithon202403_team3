@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :api do
+  namespace :api, format: 'json' do
     namespace :v1 do
       resources :events, only: [:index, :show, :create, :update, :destroy]
     end
