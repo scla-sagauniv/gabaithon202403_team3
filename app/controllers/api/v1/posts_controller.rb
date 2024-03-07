@@ -34,6 +34,7 @@ class Api::V1::PostsController < ApplicationController
     @post.destroy
   end
 
+
   private
 
   def post_params
