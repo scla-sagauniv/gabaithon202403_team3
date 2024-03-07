@@ -24,6 +24,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_07_120936) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "information", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "comment"
     t.string "user_id"
