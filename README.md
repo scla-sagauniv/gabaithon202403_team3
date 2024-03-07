@@ -51,3 +51,26 @@ pushができたらgithubで確認、プルリクを出す
 * 同じファイルを同時に編集するのはできるだけ避けましょう
 * こまめに```git pull```を行って、ブランチを最新の状態に保ちましょう
 
+#### Model,Contoroller作成の流れ
+```bash
+sudo docker compose exec web /bin/bash //コンテナの中に入る
+//Postモデル生成、Postモデルに対応するマイグレーションファイルを含め、必要なファイルを生成する
+rails generate model Post title:string content:text 
+//データベースマイグレーション
+rails db:migrate
+//controllerを作成
+rails generate controller Api::V1::Posts index show create update destroy
+//Gemfileいじったら
+bundle install
+```bash
+
+#### ファイルの編集ができないとき
+```bash
+ls -l /home/shin/dev/ガバイソン/rails_study/config/database.yml
+
+//パーミッションを変更する
+sudo chown $(whoami) /home/shin/dev/ガバイソン/rails_study/config/database.yml
+
+//ディレクトリのパーミッションを変更する
+sudo chown -R $(whoami) /home/shin/dev/ガバイソン/rails_study/
+```bash
